@@ -1,0 +1,58 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "insomnia",
+  "title": "Insomnia",
+  "description": "Control Insomnia awake sessions from Raycast using its built-in CLI.",
+  "icon": "icon.png",
+  "author": "ArunBalajiR",
+  "categories": [
+    "Productivity",
+    "System"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "start-session",
+      "title": "Start Awake Session",
+      "description": "Start a timed awake session in Insomnia",
+      "mode": "view"
+    },
+    {
+      "name": "extend-session",
+      "title": "Extend Awake Session",
+      "description": "Extend the active Insomnia session",
+      "mode": "view"
+    },
+    {
+      "name": "end-session",
+      "title": "End Awake Session",
+      "description": "End the current Insomnia session",
+      "mode": "no-view"
+    },
+    {
+      "name": "status",
+      "title": "Insomnia Status",
+      "description": "Check the current Insomnia session status",
+      "mode": "no-view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.0",
+    "@raycast/utils": "^2.3.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.2.0",
+    "@types/node": "18.18.4",
+    "@types/react": "^19.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.5.0"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  }
+}
