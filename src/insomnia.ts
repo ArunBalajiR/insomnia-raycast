@@ -31,8 +31,9 @@ export async function runInsomniaCommand(subcommand: string, ...args: (string | 
   try {
     const { stdout } = await execFileAsync(INSOMNIA_BIN, ["--session", subcommand, ...args.map(String)]);
     return { success: true, output: stdout.trim() };
-  } catch (err: any) {
-    return { success: false, error: (err?.stderr || err?.message || "Unknown error").toString().trim() };
+  } catch (err) {
+    const e = err as { stderr?: string; message?: string };
+    return { success: false, error: (e?.stderr || e?.message || "Unknown error").toString().trim() };
   }
 }
 
